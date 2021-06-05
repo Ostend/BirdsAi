@@ -33,4 +33,4 @@ record_pred_df = recorded_areakm_df.append(predicted_ESM_df)
 record_pred_df.reset_index(inplace=True)
 record_pred_df.drop(columns='index', inplace=True)
 record_pred_df.columns=['Year', 'Total_Area_km']
-print(record_pred_df)
+#print(record_pred_df)
