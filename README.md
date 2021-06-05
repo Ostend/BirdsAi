@@ -2,6 +2,8 @@
 An exploration of deforestation in Brazil. </br> 
 This is a personal exploration of using data science and mapbox.js to create a React-Flask app. </br>
 I am currently exploring the [Prodes dataset](https://data.globalforestwatch.org/datasets/gfw::prodes-deforestation-in-amazonia/about). </br>
+![ExponentionSmoothingForecastALLSTATES](https://user-images.githubusercontent.com/60686512/120893334-0aa20280-c613-11eb-9236-7fb660866744.PNG)
+
 
 ## Installation
 At the moment, this is not deployed. <br>
