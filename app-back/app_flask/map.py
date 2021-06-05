@@ -69,5 +69,6 @@ folium.Choropleth(
 ).add_to(m)
 
 folium.LayerControl().add_to(m)
+
 m.save('map.html')
 
