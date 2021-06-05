@@ -1,9 +1,9 @@
 # BirdsAi
 An exploration of deforestation in Brazil. </br> 
-This is a personal exploration of using data science and mapbox.js to create a React-Flask app. </br>
+This is a personal exploration of using data science and folium to create a React-Flask app. </br>
 I am currently exploring the [Prodes dataset](https://data.globalforestwatch.org/datasets/gfw::prodes-deforestation-in-amazonia/about). </br>
-![ExponentionSmoothingForecastALLSTATES](https://user-images.githubusercontent.com/60686512/120893334-0aa20280-c613-11eb-9236-7fb660866744.PNG)
-
+![areakmState](https://user-images.githubusercontent.com/60686512/120898615-e3a3fa80-c62b-11eb-80c6-d9a5cd74638f.PNG)
+Map represents the amount of areakm deforested per state in Legal Amazonia. Data collected from 2008-2019. Color scheme is Yellow to Red. 
 
 ## Installation
 At the moment, this is not deployed. <br>
@@ -30,3 +30,4 @@ Then, ***everytime*** you would like to start up the Flask server (as well as en
 
 ## Data
 In the /Data directory, visualizations from the data explored in the Prodes dataset are provided. 
+![ExponentionSmoothingForecastALLSTATES](https://user-images.githubusercontent.com/60686512/120893334-0aa20280-c613-11eb-9236-7fb660866744.PNG)
