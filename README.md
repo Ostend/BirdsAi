@@ -16,7 +16,7 @@ chmod +x install_FLASK.sh
 ```
 
 ***For a short cut to run the Flask server:*** <br>
-run this command only once: <br>
+run this command ***only once***: <br>
 ```bash
 chmod +x run_flask.sh
 ``` 
