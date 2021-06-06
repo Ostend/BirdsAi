@@ -1,0 +1,46 @@
+with open(b_geo) as f:
+    geo_data=json.load(f)
+
+# *check out the type, and it is a dictionary
+print(type(geo_data))
+#*check out the keys: dict_keys(['type', 'features'])
+print(geo_data.keys())
+#* data needed is in features, which is a list. 
+print(type(geo_data['features']))
+
+#*write a for loop to extract the data
+for state in geo_data['features']:
+    print(state.keys())
+    #* each state is its own object now, the keys are :dict_keys(['type', 'geometry', 'properties'])
+    #* now another for loop to access the geometry and properties. 
+    for code in state['properties']:
+        print(code)
+
+
+## NEXT ATTEMPT AT FORMATING GEOJSON DATA FOR POP UP ON CHLOROPLETH MAP
+
+#print(geo_data.keys()) #returns: type and features
+
+#try to turn the features key into a series?
+df = pd.read_json(b_geo)
+geo_series = df['features'].apply(pd.Series)
+#print(type(geo_series))
+#to be able to extract the json data, break these two down into their own dataframes, then concate them togther based on their index. 
+geometry_df = geo_series['geometry'].apply(pd.Series)
+
+#? try to take the coords out of a nested list..
+
+
+properties_df = geo_series['properties'].apply(pd.Series)
+frames = [properties_df, geometry_df]
+geo_prop_df = pd.concat(frames, axis=1)
+
+#now clean it, only want state and coordinates
+geo_prop_df.drop(columns=['id', 'name', 'updated_at', 'type', 'regiao_id', 'codigo_ibg', 'cartodb_id', 'created_at'], inplace=True)
+
+geo_prop_df.rename(columns={'sigla':'State'},inplace=True)
+
+#need to use the unique states in the df to go through the geojson file, to get the coordinates of the 9 states. coordinates located under geometry.coordinates. 
+#properties.sigla where the state abbv. is
+area_km_coordinates_df = pd.merge(geo_prop_df, area_by_state, on='State')
+print(area_km_coordinates_df)

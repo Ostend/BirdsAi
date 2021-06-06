@@ -18,6 +18,14 @@ def ESM_json():
 @app.route("/map", methods=["GET", "POST"])
 def map_areakm():
     return render_template('map.html')
+
+@app.route('/prodes', methods=["GET", "POST"])
+def prodes_map():
+  return render_template('prodesmap.html')
+
+
+
+
 if __name__ == "__main__":
   app.run(port=5000, debug=True)
  
