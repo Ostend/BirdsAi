@@ -22,6 +22,9 @@ then
     source venv/bin/activate
     echo ">>installing Flask..."
     pip install Flask
+    echo ">>installing dependencies..."
+    pip install pandas
+    pip install geopandas
     deactivate
     echo "Successful!"
     echo "	to start the Flask server follow these commands:"
